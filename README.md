@@ -73,11 +73,19 @@ Add this block at the end of your twig layout:
         {{ app.session|alertify|raw }}
      {% endblock %}
 
-Now, anywhere, you can put your alert in the flash session and enjoy.
+Now, anywhere, you can put your alert in the flash session and enjoy. (DEPRECATED)
 
     $this->get('session')->getFlashBag()->add('success', 'ok');
     $this->get('session')->getFlashBag()->add('warning', array('body' => 'ok');
     $this->get('session')->getFlashBag()->add('warning', array('body' => 'ok', 'context' => 'front');
+
+You can publish your message to session flashbag by using service "alertify". For instance:
+```php
+    $this->container->get('alertify')->success([
+        'engine' => 'alert', 
+        'title' => "Password successfully changed", 
+    ]);
+```
 
 If you have two contexts in your application (front and back for example), I advice you to override these functions in your controller in each side to pass automatic context like this:
 

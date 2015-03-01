@@ -56,8 +56,8 @@ class AlertifyExtension extends \Twig_Extension
     public function alertifyFilter($environment, Session $session)
     {
         $flashes = $session->getFlashBag()->all();
-
         $renders = array();
+        
         foreach ($flashes as $type => $flash) {
             if ($type == "callback") {
                 foreach ($flash as $key => $currentFlash) {

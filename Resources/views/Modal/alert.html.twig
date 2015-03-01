@@ -1,6 +1,12 @@
 <div class="alert alert-dismissable alert-{{ type }}">
     <i class="fa fa-fw fa-check"></i>
-    <strong>{{ title|raw|trans({}, translationDomain|default('alertify')) }}</strong>
-    {{body|default('')|raw}}
-    <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+    <strong>{{ title|default('')|raw|trans({}, translationDomain|default('alertify')) }}</strong>
+    {{ body|default('')|raw|trans({}, translationDomain|default('alertify')) }}
+    <button class="close" aria-hidden="true" data-dismiss="alert" type="button">
+        {% if delete_icon is not defined or delete_icon == "" %}
+            ×
+        {% else %}
+            <i class="{{ delete_icon }}"></i>
+        {% endif %}
+    </button>
 </div>
