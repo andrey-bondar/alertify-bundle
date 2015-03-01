@@ -33,10 +33,5 @@
     },
     "target-dir": "AppVentus/AlertifyBundle",
 
-    "minimum-stability": "dev",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.3.x-dev"
-        }
-    }
+    "minimum-stability": "dev"
 }
