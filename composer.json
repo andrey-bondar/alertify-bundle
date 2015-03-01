@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "friendsofsymfony/jsrouting-bundle": "2.0.*@dev"
+        "friendsofsymfony/jsrouting-bundle": "1.*@dev"
     },
     "require-dev": {
         "symfony/class-loader": "~2.1"
