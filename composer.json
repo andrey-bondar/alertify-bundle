@@ -1,11 +1,16 @@
 {
-    "name": "appventus/alertify-bundle",
+    "name": "bestmodules/alertify-bundle",
     "type": "symfony-bundle",
     "description": "Symfony AlertifyBundle",
     "keywords": ["alert", "bootstrap"],
-    "homepage": "https://github.com/AppVentus/AvAlertifyBundle",
+    "homepage": "https://github.com/bestmodules/AvAlertifyBundle",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Andrey Bondar",
+            "email": "admin@bestmodules.com",
+            "homepage": "http://bestmodules.com"
+        },
         {
             "name": "Paul Andrieux",
             "email": "paul@appventus.com",
