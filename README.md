@@ -17,7 +17,7 @@ Installation
 
 First, require it thanks to composer:
 
-    composer.phar require appventus/alertify-bundle:dev-master
+    composer.phar require bestmodules/alertify-bundle:dev-master
 
 
 Add it in your AppKernel.php:
@@ -30,7 +30,7 @@ Add it in your AppKernel.php:
 
 Then, just publish your assets, annnnnnd it's done !
 
-Configuration ?
+Configuration
 ------------
 
 
@@ -40,7 +40,7 @@ To define the default configuration of your alerts, you can add the following li
 av_alertify:
     contexts:
         front:
-            engine: "toastr"              \#Could be noty, modal, toastr [or your own](#use-my-own-alert-system)
+            engine: "toastr"              \#Could be noty, modal, toastr, alert or your own
             layout: "top-right"           \#Is relative according to the selected engine
             translationDomain: "messages" \#Where do you want to store the translation strings
         admin:
@@ -62,7 +62,7 @@ av_alertify:
     ...
 ```
 
-How to ?
+Usage
 ------------
 
 It's easy to use, just follow the following:
@@ -79,14 +79,7 @@ Now, anywhere, you can put your alert in the flash session and enjoy.
     $this->get('session')->getFlashBag()->add('warning', array('body' => 'ok');
     $this->get('session')->getFlashBag()->add('warning', array('body' => 'ok', 'context' => 'front');
 
-If you're using AvAwesomeShortcutsBundle, you can also use these shortcuts (from av.shortcuts or AwesomeController) :
-
-    $this->congrat('TEST');
-    $this->warn('TEST');
-    $this->inform('TEST');
-    $this->scold('TEST');
-
-If you have two contexts in your application (front and back for example), I spur you to override these functions in your controller in each side to pass automatic context like this :
+If you have two contexts in your application (front and back for example), I advice you to override these functions in your controller in each side to pass automatic context like this:
 
 ```php
     class BaseFrontController
@@ -108,7 +101,7 @@ If you have two contexts in your application (front and back for example), I spu
 <a name="use-my-own-alert-system"></a>Display alerts with a custom library
 ------------
 
-AvAlertify comes with some librairies to ease use but it's free to you to use custom Library (feel free to make a Pull request, your library could interest community :).
+AvAlertify comes with some libraries to ease use but it's free to you to use custom Library (feel free to make a Pull request, your library could interest community :).
 You just have to follow these steps :
 
 ```yml
@@ -129,7 +122,7 @@ Options
 
 To call a modal box, just use a flash named 'modal':
 
-    $this->get('session')->getFlashBag()->set("success", array('engine' => 'modal', 'title' => "Wow", 'button_class' => "btn btn-primary btn-large", "body"=> "<div>Some info</div>"));
+    $this->get('session')->getFlashBag()->add("success", array('engine' => 'modal', 'title' => "Wow", 'button_class' => "btn btn-primary btn-large", "body"=> "<div>Some info</div>"));
 
 as you see, you can pass some arguments tu customize the modal, availables ones are:
 

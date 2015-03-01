@@ -1,0 +1,6 @@
+<div class="alert alert-dismissable alert-{{ type }}">
+    <i class="fa fa-fw fa-check"></i>
+    <strong>{{ title|raw|trans({}, translationDomain|default('alertify')) }}</strong>
+    {{body|default('')|raw}}
+    <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+</div>
